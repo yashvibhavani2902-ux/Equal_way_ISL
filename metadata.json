@@ -1,0 +1,11 @@
+{
+  "name": "Remix EqualWay — Inclusive Communication \u0026 Empowerment Platform",
+  "description": "Accessibility-first platform for the speech- and hearing-impaired community featuring SignBridge, Seekh ISL, ISL in Public, and SurakshaBridge.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

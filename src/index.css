@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+:root {
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Vibrant Palette Theme — Colorblind-Safe Okabe-Ito Accents */
+  --bg-primary: #F8F9FA;
+  --bg-surface: #FFFFFF;
+  --bg-surface-hover: #F1F3F5;
+  --border-color: #E2E8F0;
+  --border-color-dark: #CBD5E1;
+  
+  --text-primary: #1A1A1A;     /* Crisp high contrast on light canvas */
+  --text-secondary: #4B5157;   /* Refined secondary gray */
+  
+  --error-color: #D55E00;      /* Vibrant Vermilion */
+  --error-bg: #FFF5F2;
+  --success-color: #009E73;    /* Vibrant Bluish-Green */
+  --success-bg: #EBF8F4;
+  
+  /* Module Accent Colors (Vibrant Okabe-Ito) */
+  --accent-brand: #E69F00;     /* Vibrant Amber/Orange */
+  --accent-default: #0072B2;   /* Vibrant Blue */
+  --accent-signbridge: #E69F00;/* Vibrant Amber */
+  --accent-seekh: #0072B2;     /* Vibrant Blue */
+  --accent-public: #009E73;    /* Vibrant Bluish Green */
+  --accent-suraksha: #D55E00;  /* Vibrant Vermilion */
+  --accent-sky: #56B4E9;       /* Vibrant Sky Blue */
+
+  /* Focus Indicator */
+  --focus-outline-color: #E69F00;
+  --focus-outline-width: 3px;
+  --focus-outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+html.high-contrast {
+  --bg-primary: #FFFFFF;
+  --bg-surface: #FFFFFF;
+  --bg-surface-hover: #EAEAEA;
+  --border-color: #000000;
+  --border-color-dark: #000000;
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --accent-brand: #C87500;
+  --accent-default: #004488;
+  --accent-signbridge: #C87500;
+  --accent-seekh: #004488;
+  --accent-public: #006644;
+  --accent-suraksha: #A03000;
+  --accent-sky: #006699;
+  --focus-outline-color: #000000;
+}
+
+/* Font Scales */
+html.font-scale-lg {
+  font-size: 18px;
+}
+html.font-scale-xl {
+  font-size: 20px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-display);
+}
+
+/* Strict Keyboard Focus Visibility */
+:focus-visible {
+  outline: var(--focus-outline-width) solid var(--focus-outline-color) !important;
+  outline-offset: var(--focus-outline-offset) !important;
+}
+
+/* Skip Navigation Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: #1A1A1A;
+  color: #FFFFFF;
+  padding: 0.75rem 1.25rem;
+  z-index: 9999;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  header, aside, footer, .no-print, button:not(.print-include) {
+    display: none !important;
+  }
+  .print-area {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 2px solid #000000 !important;
+    page-break-inside: avoid;
+  }
+}
+
+
