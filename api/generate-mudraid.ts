@@ -1,5 +1,16 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { GoogleGenAI } from '@google/genai';
+
+interface VercelRequest {
+  method?: string;
+  body?: any;
+  query?: Record<string, string | string[]>;
+}
+
+interface VercelResponse {
+  status: (code: number) => VercelResponse;
+  json: (body: any) => VercelResponse;
+  send: (body: any) => VercelResponse;
+}
 
 function generateFallbackMudraId(name: string): string {
   const clean = (name || 'WARD').replace(/[^A-Za-z]/g, '').toUpperCase();
