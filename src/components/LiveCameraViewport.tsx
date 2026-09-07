@@ -11,8 +11,9 @@ import {
   CheckCircle2,
   AlertCircle
 } from 'lucide-react';
-import { Holistic, Results as HolisticResults } from '@mediapipe/holistic';
-import { Hands, Results as MPResults } from '@mediapipe/hands';
+// Safe MediaPipe globals with browser fallbacks
+const Holistic: any = typeof window !== 'undefined' ? (window as any).Holistic || null : null;
+const Hands: any = typeof window !== 'undefined' ? (window as any).Hands || null : null;
 import { ISL_ALPHABETS_DICT, ISL_WORDS_DICT } from '../data/islDictionary';
 import {
   aiGestureEngine,
